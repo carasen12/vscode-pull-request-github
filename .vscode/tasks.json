@@ -7,13 +7,18 @@
 			"type": "npm",
 			"script": "build",
 			"group": "build",
-			"problemMatcher": ["$ts-checker-webpack", "$ts-checker-eslint-webpack"]
+			"problemMatcher": [
+				"$ts-checker-webpack",
+				"$ts-checker-eslint-webpack"
+			]
 		},
 		{
 			"type": "npm",
 			"script": "lint",
 			"group": "build",
-			"problemMatcher": ["$eslint-stylish"]
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
 		},
 		{
 			"type": "npm",
@@ -23,21 +28,31 @@
 				"isDefault": true
 			},
 			"isBackground": true,
-			"problemMatcher": ["$ts-checker-webpack-watch", "$ts-checker-eslint-webpack-watch"]
+			"problemMatcher": [
+				"$ts-checker-webpack-watch",
+				"$ts-checker-eslint-webpack-watch"
+			]
 		},
 		{
 			"label": "Serve local web extension",
-			"dependsOn": ["serve web", "tunnel web"],
+			"dependsOn": [
+				"serve web",
+				"tunnel web"
+			],
 			"isBackground": true,
 			"problemMatcher": [],
-			"presentation": { "group": "vscode-web" }
+			"presentation": {
+				"group": "vscode-web"
+			}
 		},
 		{
 			"label": "serve web",
 			"type": "shell",
 			"command": "npx serve --cors -l 5000",
 			"isBackground": true,
-			"presentation": { "group": "vscode-web" },
+			"presentation": {
+				"group": "vscode-web"
+			},
 			"problemMatcher": []
 		},
 		{
@@ -45,8 +60,18 @@
 			"type": "shell",
 			"command": "npx localtunnel -p 5000",
 			"isBackground": true,
-			"presentation": { "group": "vscode-web" },
+			"presentation": {
+				"group": "vscode-web"
+			},
 			"problemMatcher": []
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "npm: install",
+			"detail": "install dependencies from package"
 		}
 	]
 }
